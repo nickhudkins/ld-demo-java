@@ -30,9 +30,7 @@ public enum FeatureProvider {
         } else {
             logger.info("LD_SDK_KEY starts with: " + 
                 System.getenv("LD_SDK_KEY").substring(
-                    KEY_START_INDEX, 
-                    KEY_END_INDEX
-                ));
+                    KEY_START_INDEX, KEY_END_INDEX));
         }
     }
 }

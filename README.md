@@ -6,6 +6,29 @@ Java Sandbox for LaunchDarkly
 
 The FeatureProvider class implements the LaunchDarkly client as a singleton. It uses the approach documented here: https://dzone.com/articles/java-singletons-using-enum 
 
+There is some fancy stuff in here for logging and checking that the environment variable 
+for the LD_SDK_KEY exists. The most basic implementation of this could look like this: 
+
+```
+package org.levlaz;
+
+import com.launchdarkly.client.LDClient;
+
+/**
+ * Singleton Enum
+ */
+public enum FeatureProvider {
+    INSTANCE;
+
+    private LDClient ldClient = new LDClient(System.getenv("LD_SDK_KEY"));
+    
+    public LDClient getInstance() {
+        checkEnv();
+        return ldClient;
+    }
+}
+```
+
 ## Usage 
 
 You can run this without LauncDarkly, but feature flags will fall back to the hard coded fallback 

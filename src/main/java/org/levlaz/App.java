@@ -5,7 +5,7 @@ import com.launchdarkly.client.LDUser;
 import com.launchdarkly.client.LDClient;
 
 /**
- * Hello world!
+ * Sample LaunchDarkly Demo Application
  *
  */
 public class App 

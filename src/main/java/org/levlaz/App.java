@@ -22,12 +22,15 @@ public class App
             .custom("companyName", "ACME")
             .build();
 
-        boolean showFeature = ldClient.boolVariation("show-message", user, false);
+        boolean showFeature = 
+            ldClient.boolVariation("show-message", user, false);
 
         if (showFeature) {
-            System.out.println(ANSI_GREEN + "The Feature Flag is ON!" + ANSI_RESET);
+            System.out.println(
+                ANSI_GREEN + "The Feature Flag is ON!" + ANSI_RESET);
         } else {
-            System.out.println(ANSI_RED + "The Feature Flag is OFF!" + ANSI_RESET);
+            System.out.println(
+                ANSI_RED + "The Feature Flag is OFF!" + ANSI_RESET);
         }
 
         ldClient.flush();

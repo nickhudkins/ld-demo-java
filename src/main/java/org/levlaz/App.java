@@ -16,14 +16,14 @@ public class App
 
     public static void main( String[] args ) throws IOException
     {
-        LDClient ldClient = FeatureProvider.INSTANCE.getInstance();
+        FeatureService featureService = new FeatureService();
         LDUser user = new LDUser.Builder("9fdd8ec6e1bad87f5af47ee55468b61e")
             .privateEmail("lev@acme.com")
             .custom("companyName", "ACME")
             .build();
 
         boolean showFeature = 
-            ldClient.boolVariation("show-message", user, false);
+            featureService.boolVariation("show-message", user, false);
 
         if (showFeature) {
             System.out.println(
@@ -32,8 +32,5 @@ public class App
             System.out.println(
                 ANSI_RED + "The Feature Flag is OFF!" + ANSI_RESET);
         }
-
-        ldClient.flush();
-        ldClient.close();
     }
 }

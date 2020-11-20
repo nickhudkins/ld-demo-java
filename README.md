@@ -31,7 +31,7 @@ public enum FeatureProvider {
 
 ## Usage 
 
-You can run this without LauncDarkly, but feature flags will fall back to the hard coded fallback 
+You can run this without LaunchDarkly, but feature flags will fall back to the hard coded fallback 
 value. If you want to use LaunchDarkly you need the following: 
 
 1. A valid `LD_SDK_KEY` exported as an environment variable. 
